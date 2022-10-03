@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:25:26 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 15:25:27 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:00:55 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int s_p(t_list **stack, char verbChar)
     return (s(stack));
 }
 
+// Take the first element at the top of stack2 and put it at the top of stack1
 int p_p(t_list **stack1, t_list **stack2, char verbChar)
 {
     ft_printf("p%c\n", verbChar);

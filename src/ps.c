@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 15:44:41 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:13:59 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_list  *args_toList(char *charray[])
 int main(int argc, char *argv[])
 {
     t_list  *a, *b;
+    size_t  moves;
 
     if (argc < 2)
     {
@@ -44,12 +45,15 @@ int main(int argc, char *argv[])
     b = NULL;
 
     if (argc == 4)
-    {
-        sort3(&a, &b);
-    }    
+        moves = sort3(&a, 'a');
+    else if (argc == 5)
+        moves = sort4(&a, &b);
+    else if (argc == 6)
+        moves = sort5(&a, &b);
     ft_lstprint(a);
     ft_lstprint(b);
 
     ft_lstclear(&a, free);
+    ft_printf("Number of Moves: %d", moves);
     return (0);
 }
