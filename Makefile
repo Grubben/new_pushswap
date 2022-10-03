@@ -13,17 +13,23 @@ SRCS	= $(wildcard src/*.c)
 OBJS	= $(SRCS:.c=.o)
 
 
-$(NAME)	: $(OBJS)
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME).out		: src/libft.a $(OBJS)
+			$(CC) $(CFLAGS) -o $(NAME).out src/libft.a $(OBJS)
 
-all		: $(NAME)
+src/libft.a	:
+			$(MAKE) -C src/libft --silent
+			cp src/libft/libft.a src/libft.a
 
-clean	:
+all			: $(NAME)
+
+clean		:
 			$(RM) $(OBJS)
 
-fclean	: clean
+fclean		: clean
 			$(RM) $(NAME)
+			$(RM) src/libft.a
+			$(MAKE) -C src/libft fclean
 
-re		: fclean $(NAME)
+re			: fclean $(NAME)
 
-.PHONY	: re fclean clean all
+.PHONY		: re fclean clean all
