@@ -28,7 +28,7 @@ void	ft_lstprint(t_list *head)
 
 void	pointIntPrinter(void *pointer)
 {
-	printf("%i\n", *((int *)pointer));
+	ft_printf("%i\n", *((int *)pointer));
 }
 
 void	ft_lstprint2(t_list *head)

@@ -1,4 +1,4 @@
-NAME		= push_swap
+NAME		= push_swap.out
 
 ## COMPILATION
 CC			= gcc
@@ -15,8 +15,8 @@ OBJS		= $(SRCS:.c=.o)
 
 LIBFT		= src/libft.a
 
-$(NAME).out	: $(LIBFT) $(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME).out $(OBJS) $(LIBFT)
+$(NAME)	: $(LIBFT) $(OBJS)
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 %.o			: %.c
 				$(CC) $(CFLAGS) -c -o $@ $<
@@ -35,6 +35,6 @@ fclean		: clean
 				$(RM) $(LIBFT)
 				$(MAKE) -C src/libft fclean
 
-re			: fclean $(NAME).out
+re			: fclean $(NAME)
 
 .PHONY		: re fclean clean all
