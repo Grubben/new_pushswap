@@ -3,43 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/04 18:32:46 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/07 00:03:51 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     ar_min(int *array, size_t arlen)
+int     ar_minindex(int *array, size_t arlen)
 {
     size_t  i;
-    int     min;
+    int     minindex;
 
-    min = array[0];
+    if (arlen == 0)
+        return (-1);
+    if (arlen == 1)
+        return (0);
+    minindex = 0;
     i = 1;
     while (i < arlen)
     {
-        if (array[i] < min)
-            min = array[i];
+        if (array[i] < array[minindex])
+            minindex = array[i];
         i++;
     }
+    return (minindex);
 }
 
 
-static int  *selection_sort(int *array, size_t arlen)
+int  *selection_sort(int *array, size_t arlen)
 {
-    int i;
+    size_t  i;
+    int     tmpint, tmpj;
 
     i = 0;
+    // TODO: Inefficient going through all the array. Only half necessary
     while (i < arlen)
     {
-        
+        tmpj = ar_minindex(array + i, arlen - i);
+        if (tmpj <= 0)
+        {
+            i++;
+            continue;
+        }
+        tmpint  = array[i];
+        array[i] = array[tmpj];
+        array[tmpj] = tmpint;
     }
+    return (array);
 }
 
-static int  *convert_toArr(t_list *stack)
+
+int  *convert_toArr(t_list *stack)
 {
     int     *array;
     size_t  i, len;
@@ -57,20 +74,44 @@ static int  *convert_toArr(t_list *stack)
     return (array);
 }
 
-static void    indexify(t_list *stack)
+
+int *indexify(t_list *stack)
 {
     int *indexes;
 
     indexes = convert_toArr(stack);
     indexes = selection_sort(indexes, ft_lstlen(stack));
-
-
+    return (indexes);
 }
 
-size_t  radix_sort(t_list **a, t_list **b)
+
+size_t  radix_sort(int *array, t_list **a, t_list **b)
 {
     size_t  moves;
 
     moves = 0;
-    // indexify()
+
+}
+
+size_t  sortbig(t_list **a, t_list **b)
+{
+    int *indexes;
+
+    indexes = indexify(*a);
+    return (radix_sort(indexes, a, b));
+}
+
+#include <stdio.h>
+int main(void)
+{
+    int arr[] = {1, 3, 2};
+    int *ptarr;
+
+    ptarr = selection_sort(arr, 3);
+
+    printf("%d\n", arr[0]);
+    printf("%d\n", arr[1]);
+    printf("%d\n", arr[2]);
+
+    return (0);
 }
