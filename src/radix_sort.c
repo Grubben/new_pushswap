@@ -6,13 +6,13 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 12:08:13 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:14:49 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     ar_minindex(int *array, size_t arlen)
+static int     ar_minindex(int *array, size_t arlen)
 {
     size_t  i;
     int     minindex;
@@ -33,7 +33,7 @@ int     ar_minindex(int *array, size_t arlen)
 }
 
 
-void    selection_sort(int *array, size_t arlen)
+static void    selection_sort(int *array, size_t arlen)
 {
     size_t  i;
     int     tmpint, tmpj;
@@ -56,7 +56,7 @@ void    selection_sort(int *array, size_t arlen)
 }
 
 
-int  *convert_toArr(t_list *stack)
+static int  *convert_toArr(t_list *stack)
 {
     int     *array;
     size_t  i, len;
@@ -75,14 +75,12 @@ int  *convert_toArr(t_list *stack)
 }
 
 
-void    indexify(t_list *stack)
+static void    indexify(t_list *stack)
 {
     int     *indexes;
     t_list  *tmp;
     size_t  i, index;
 
-    if (ft_lstmin(stack) >= 0)
-        return;
     indexes = convert_toArr(stack);
     selection_sort(indexes, ft_lstlen(stack));
     i = 0;
@@ -128,12 +126,13 @@ size_t  sortbig(t_list **a, t_list **b)
 {
     size_t  moves;
 
-    indexify(*a);
+    if (ft_lstmin(*a) < 0)
+        indexify(*a);
     moves = radix_sort(a, b);
     return (moves);
 }
 
-#include <stdio.h>
+/*
 int main(void)
 {
     int *arr;
@@ -170,3 +169,4 @@ int main(void)
     
     return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:21:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 17:05:49 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:12:52 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ size_t  sort3(t_list **stack, char verbChar);
 size_t  sort4(t_list **a, t_list **b);
 
 size_t  sort5(t_list **a, t_list **b);
+
+size_t  sortbig(t_list **a, t_list **b);
+
 
 /*  OPS */
 

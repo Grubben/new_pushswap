@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 17:13:59 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:13:44 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int main(int argc, char *argv[])
         moves = sort4(&a, &b);
     else if (argc == 6)
         moves = sort5(&a, &b);
+    else
+        moves = sortbig(&a, &b);
     ft_lstprint(a);
     ft_lstprint(b);
 
