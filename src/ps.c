@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 16:13:44 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:23:23 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int main(int argc, char *argv[])
     ft_lstprint(b);
 
     ft_lstclear(&a, free);
-    ft_printf("Number of Moves: %d", moves);
+    ft_printf("\nNumber of Moves: %d\n", moves);
     return (0);
 }
