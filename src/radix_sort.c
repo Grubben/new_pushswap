@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 10:49:36 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:36:30 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,19 @@ int  *convert_toArr(t_list *stack)
 void    indexify(t_list *stack)
 {
     int     *indexes;
-    int     i;
     t_list  *tmp;
-    size_t  index;
+    size_t  i, index;
 
+    if (ft_lstmin(stack) >= 0)
+        return;
     indexes = convert_toArr(stack);
     selection_sort(indexes, ft_lstlen(stack));
     i = 0;
     while (i < ft_lstlen(stack))
     {
-        index = ft_lstindex(a, indexes[i]);
+        index = ft_lstindex(stack, indexes[i]);
         tmp = ft_lstget_item(stack, index);
-        tmp->content = i;
+        *(int *)(tmp->content) = i;
         i++;
     }
     free(indexes);
@@ -110,14 +111,14 @@ size_t  radix_sort(t_list **a, t_list **b)
         i = 0;
         while (i < lstlen)
         {
-            if ((ft_pslstget_it(*a, i)>>shifts) & 1 == 0)
-                p_p(b, a, 'b'); // push to b
+            if ((ft_pslstget_it(*a, 0)>>shifts & 1) == 0)
+                moves += p_p(b, a, 'b'); // push to b
             else
-                r_p(a, 'a');
+                moves += r_p(a, 'a');
             i++;
         }
         while (*b)
-            p_p(a, b, 'a'); // push back to a
+            moves += p_p(a, b, 'a'); // push back to a
         shifts++;
     }
     return (moves);
@@ -125,24 +126,47 @@ size_t  radix_sort(t_list **a, t_list **b)
 
 size_t  sortbig(t_list **a, t_list **b)
 {
-    int     *indexes;
     size_t  moves;
 
     indexify(*a);
     moves = radix_sort(a, b);
+    return (moves);
 }
 
 #include <stdio.h>
 int main(void)
 {
-    int arr[] = {1, 3, 2};
-    int *ptarr;
+    int *arr;
+    
+    arr = ft_calloc(3, sizeof(int));
+    arr[0] = 1;
+    arr[1] = 3;
+    arr[2] = 2;
+    // int *ptarr;
 
-    ptarr = selection_sort(arr, 3);
+    // ptarr = selection_sort(arr, 3);
 
-    printf("%d\n", arr[0]);
-    printf("%d\n", arr[1]);
-    printf("%d\n", arr[2]);
+    // printf("%d\n", arr[0]);
+    // printf("%d\n", arr[1]);
+    // printf("%d\n", arr[2]);
+    t_list  *head;
 
+    head = NULL;
+    ft_lstadd_back(&head, ft_lstnew(arr+0));
+    ft_lstadd_back(&head, ft_lstnew(arr+1));
+    ft_lstadd_back(&head, ft_lstnew(arr+2));
+
+    ft_lstprint(head);
+
+    
+    t_list  *b;
+    size_t  moves;
+    b = NULL;
+    moves = sortbig(&head, &b);
+
+    ft_lstprint(head);
+    
+    ft_printf("Number of Moves: %d", moves);
+    
     return (0);
 }
