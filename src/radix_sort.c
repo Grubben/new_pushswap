@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/07 00:03:51 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/11 10:49:36 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int     ar_minindex(int *array, size_t arlen)
 }
 
 
-int  *selection_sort(int *array, size_t arlen)
+void    selection_sort(int *array, size_t arlen)
 {
     size_t  i;
     int     tmpint, tmpj;
@@ -52,7 +52,7 @@ int  *selection_sort(int *array, size_t arlen)
         array[i] = array[tmpj];
         array[tmpj] = tmpint;
     }
-    return (array);
+    // return (array);
 }
 
 
@@ -75,30 +75,61 @@ int  *convert_toArr(t_list *stack)
 }
 
 
-int *indexify(t_list *stack)
+void    indexify(t_list *stack)
 {
-    int *indexes;
+    int     *indexes;
+    int     i;
+    t_list  *tmp;
+    size_t  index;
 
     indexes = convert_toArr(stack);
-    indexes = selection_sort(indexes, ft_lstlen(stack));
-    return (indexes);
+    selection_sort(indexes, ft_lstlen(stack));
+    i = 0;
+    while (i < ft_lstlen(stack))
+    {
+        index = ft_lstindex(a, indexes[i]);
+        tmp = ft_lstget_item(stack, index);
+        tmp->content = i;
+        i++;
+    }
+    free(indexes);
+    // return (indexes);
 }
 
 
-size_t  radix_sort(int *array, t_list **a, t_list **b)
+size_t  radix_sort(t_list **a, t_list **b)
 {
-    size_t  moves;
+    size_t          moves, lstlen, i;
+    unsigned int    shifts;
 
     moves = 0;
-
+    lstlen = ft_lstlen(*a);
+    shifts = 0;
+    while (shifts < 8)
+    {
+        i = 0;
+        while (i < lstlen)
+        {
+            if ((ft_pslstget_it(*a, i)>>shifts) & 1 == 0)
+                p_p(b, a, 'b'); // push to b
+            else
+                r_p(a, 'a');
+            i++;
+        }
+        while (*b)
+            p_p(a, b, 'a'); // push back to a
+        shifts++;
+    }
+    return (moves);
 }
 
 size_t  sortbig(t_list **a, t_list **b)
 {
-    int *indexes;
+    int     *indexes;
+    size_t  moves;
 
-    indexes = indexify(*a);
-    return (radix_sort(indexes, a, b));
+    indexify(*a);
+    moves = radix_sort(a, b);
 }
 
 #include <stdio.h>
