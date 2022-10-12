@@ -6,7 +6,7 @@
 /*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/12 16:17:08 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/12 16:30:46 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_list  *args_toList(char *charray[])
     while (charray[i])
     {
         tmp = ft_calloc(1, sizeof(int));
+        if (!tmp)
+            return (NULL);
         *tmp = ft_atoi(charray[i]);
         ft_lstadd_back(&lst, ft_lstnew(tmp));
 
@@ -31,7 +33,6 @@ t_list  *args_toList(char *charray[])
     return (lst);
 }
 
-#include <limits.h>
 int main(int argc, char *argv[])
 {
     t_list  *a, *b;
@@ -42,7 +43,14 @@ int main(int argc, char *argv[])
         write(1, "Not enough arguments\n", 22);
         return (0);
     }
+    if (args_goodP(argv) == 0)
+    {
+        write(1, "Invalid arguments given\n", 25);
+        return (0);
+    }
     a = args_toList(argv);
+    if (!a)
+        return (0);
     b = NULL;
 
     if (argc == 4)
