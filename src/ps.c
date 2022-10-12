@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 16:23:23 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:17:08 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_list  *args_toList(char *charray[])
     return (lst);
 }
 
+#include <limits.h>
 int main(int argc, char *argv[])
 {
     t_list  *a, *b;
@@ -52,6 +53,7 @@ int main(int argc, char *argv[])
         moves = sort5(&a, &b);
     else
         moves = sortbig(&a, &b);
+    ft_printf("\n\n");
     ft_lstprint(a);
     ft_lstprint(b);
 

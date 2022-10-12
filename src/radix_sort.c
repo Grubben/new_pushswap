@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 16:43:51 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:17:54 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ size_t  radix_sort(t_list **a, t_list **b)
     moves = 0;
     lstlen = ft_lstlen(*a);
     shifts = 0;
-    while (!is_ascendingP(*a) && shifts < 8)
+    while (!is_ascendingP(*a) && shifts < 32)
     {
         i = 0;
         while (i < lstlen)
@@ -119,6 +119,7 @@ size_t  radix_sort(t_list **a, t_list **b)
         }
         while (*b)
             moves += p_p(a, b, 'a'); // push back to a
+        // ft_lstprint(*a);
         shifts++;
     }
     return (moves);
