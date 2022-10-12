@@ -6,7 +6,7 @@
 /*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/12 16:30:46 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/12 17:10:00 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ int main(int argc, char *argv[])
         return (0);
     }
     if (args_goodP(argv) == 0)
-    {
-        write(1, "Invalid arguments given\n", 25);
-        return (0);
-    }
+        quit();
     a = args_toList(argv);
     if (!a)
         return (0);

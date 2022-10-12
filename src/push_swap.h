@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:21:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 16:12:52 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/12 17:08:03 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <limits.h>
 
 size_t  sort3(t_list **stack, char verbChar);
 
@@ -79,6 +80,12 @@ int	revRotate_p(t_list **stack, int howMany, char verbChar);
 int	is_ascendingP(t_list *stack);
 
 int	is_descendingP(t_list *stack);
+
+
+/*	ARG_CHECKER	*/
+int	args_goodP(char *argv[]);
+
+void	quit(void);
 
 
 #endif
