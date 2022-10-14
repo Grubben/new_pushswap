@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:22:55 by amc               #+#    #+#             */
-/*   Updated: 2022/10/12 17:06:15 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/14 11:15:21 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_goodnumP(char *string)
 			return (0);
 		i++;
 	}
-	if (ft_atoi(string) > 2147483647)
+	if (ft_atol(string) > 2147483647)
 		return (0);
 	return (1);
 }
