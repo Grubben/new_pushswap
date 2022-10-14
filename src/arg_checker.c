@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:22:55 by amc               #+#    #+#             */
-/*   Updated: 2022/10/14 11:15:21 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:38:04 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	is_goodnumP(char *string)
 }
 
 int	args_goodP(char *argv[])
+//TODO: check duplicates and $ARG command from enunciado is not working
 {
 	size_t	i;
 
