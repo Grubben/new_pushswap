@@ -1,4 +1,4 @@
-NAME		= push_swap.out
+NAME		= push_swap
 
 ## COMPILATION
 CC			= gcc

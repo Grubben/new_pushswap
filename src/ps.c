@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/12 17:10:00 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/14 11:28:09 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_list  *args_toList(char *charray[])
 int main(int argc, char *argv[])
 {
     t_list  *a, *b;
-    size_t  moves;
 
     if (argc < 2)
     {
@@ -51,18 +50,13 @@ int main(int argc, char *argv[])
     b = NULL;
 
     if (argc == 4)
-        moves = sort3(&a, 'a');
+        sort3(&a, 'a');
     else if (argc == 5)
-        moves = sort4(&a, &b);
+        sort4(&a, &b);
     else if (argc == 6)
-        moves = sort5(&a, &b);
+        sort5(&a, &b);
     else
-        moves = sortbig(&a, &b);
-    ft_printf("\n\n");
-    ft_lstprint(a);
-    ft_lstprint(b);
-
+        sortbig(&a, &b);
     ft_lstclear(&a, free);
-    ft_printf("\nNumber of Moves: %d\n", moves);
     return (0);
 }
