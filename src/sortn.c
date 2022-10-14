@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort3.c                                            :+:      :+:    :+:   */
+/*   sortn.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:16:21 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 17:27:08 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:31:59 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+size_t  sort2(t_list **stack, char verbChar)
+{
+    if (is_ascendingP(*stack))
+        return (0);
+    r_p(stack, verbChar);
+    return (1);
+}
 
 size_t  sort3(t_list **stack, char verbChar)
 {

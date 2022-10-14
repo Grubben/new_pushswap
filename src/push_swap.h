@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:21:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/12 17:08:03 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/14 11:31:40 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft/libft.h"
 # include <limits.h>
+
+size_t  sort2(t_list **stack, char verbChar);
 
 size_t  sort3(t_list **stack, char verbChar);
 

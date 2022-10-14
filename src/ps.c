@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:28:09 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:33:18 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
         return (0);
     b = NULL;
 
+    if (argc == 3)
+        sort2(&a, 'a');
     if (argc == 4)
         sort3(&a, 'a');
     else if (argc == 5)
