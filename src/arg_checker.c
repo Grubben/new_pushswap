@@ -6,7 +6,7 @@
 /*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:22:55 by amc               #+#    #+#             */
-/*   Updated: 2022/10/17 14:46:41 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/17 15:03:52 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ int	is_goodnumP(char *string)
 	size_t	i;
 
 	i = 0;
+	if (string[i] == '-')
+		i = 1;
 	while (string[i])
 	{
 		if (!ft_isdigit(string[i]))
 			return (0);
 		i++;
 	}
-	if (ft_atol(string) > 2147483647)
+	if ((ft_atol(string) > 2147483647) || ft_atol(string) < -2147483648)
 		return (0);
 	return (1);
 }
