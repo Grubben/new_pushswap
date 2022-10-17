@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:33:18 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:46:53 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
     a = args_toList(argv);
     if (!a)
         return (0);
+    if (has_duplicatesP(a))
+        quit();
     b = NULL;
 
     if (argc == 3)

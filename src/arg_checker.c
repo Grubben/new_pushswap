@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:22:55 by amc               #+#    #+#             */
-/*   Updated: 2022/10/14 11:38:04 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:46:41 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,26 @@ int	args_goodP(char *argv[])
 		i++;
 	}
 	return (1);
+}
+
+int	has_duplicatesP(t_list *stack)
+{
+	size_t	len;
+	size_t	j, i;
+
+	len = ft_lstlen(stack);
+	j = 0;
+	while (j < len)
+	{
+		i = j + 1;
+		while (i < len)
+		{			
+			if (ft_pslstget_it(stack, j) == ft_pslstget_it(stack, i))
+				return (1);
+			i++;
+		}
+		j++;
+	}
+	return (0);
+
 }

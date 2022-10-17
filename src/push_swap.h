@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:21:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:31:40 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:46:48 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ int	args_goodP(char *argv[]);
 
 void	quit(void);
 
+int	has_duplicatesP(t_list *stack);
 
 #endif
