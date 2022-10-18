@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:13:09 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/11 16:20:05 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:05:54 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstprint(t_list *head)
 {	
 	if (head)
 	{
-		// ft_printf("%i\n", *(int *)(head->content));
 		ft_printf("| %i | ", *(int *)(head->content));
 		while (head->next != NULL)
 		{
@@ -26,14 +25,12 @@ void	ft_lstprint(t_list *head)
 	}
 }
 
-
-void	pointIntPrinter(void *pointer)
+void	intptr_printer(void *pointer)
 {
 	ft_printf("%i\n", *((int *)pointer));
 }
 
 void	ft_lstprint2(t_list *head)
 {
-
-	ft_lstiter(head, pointIntPrinter);
+	ft_lstiter(head, intptr_printer);
 }

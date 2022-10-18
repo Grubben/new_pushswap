@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstindex.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/18 15:00:24 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/10/18 15:01:17 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /**
@@ -8,22 +20,20 @@
  */
 size_t	ft_lstindex(t_list *stack, int value)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (stack->next != NULL)
 	{
 		if (*(int *)(stack->content) == value)
-			return i;
+			return (i);
 		i++;
 		stack = stack->next;
 	}
 	if (*(int *)(stack->content) == value)
-			return i;
+		return (i);
 	return (-1);
-	// return ft_lstget_item()
 }
-
 
 /*
 int	main(void)

@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:16:27 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:07:02 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int		ft_atoi(const char *str);
 
-long    ft_atol(const char *str);
+long	ft_atol(const char *str);
 
 void	*ft_calloc(size_t count, size_t size);
 
@@ -139,21 +139,20 @@ t_list	*ft_lstget_item(t_list *lst, ssize_t index);
  * ft_lstget_item but presumes
  * t_list::content is an (int *)
  */
-int	ft_pslstget_it(t_list *lst, ssize_t index);
+int		ft_pslstget_it(t_list *lst, ssize_t index);
 
 /*
 Presumes t_list:content is originally int type
 */
-int	ft_lstmin(t_list *lst);
-int	ft_lstmax(t_list *lst);
+int		ft_lstmin(t_list *lst);
+int		ft_lstmax(t_list *lst);
 
 /*
 Presumes t_list:content is originally (int *) type
 */
 void	ft_lstprint(t_list *head);
 
-t_list  *ft_lstcpy(t_list *lst);
-
+t_list	*ft_lstcpy(t_list *lst);
 
 int		ft_charinside(char c, const char *s);
 
@@ -195,6 +194,5 @@ int		ft_putnbr_base(ssize_t nbr, char *base);
 int		ft_putunbr_base(size_t nbr, char *base);
 
 size_t	simple_putunbr_base(size_t nbr, char *base);
-
 
 #endif

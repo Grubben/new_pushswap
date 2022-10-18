@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:48:45 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/07/25 23:57:33 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/18 15:01:53 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	is_replace(const char *str)
 		{
 			return (1);
 		}
-		//printf("This shouldn't happen, not reachable.");
 		return (0);
 	}
 	return (0);

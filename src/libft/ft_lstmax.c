@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmax.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/18 15:02:06 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/10/18 15:02:24 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
 Presumes t_list:content is originally int type
 */
-int		ft_lstmax(t_list *lst)
+int	ft_lstmax(t_list *lst)
 {
 	int	max;
 
 	if (!lst)
 	{
 		ft_printf("ERROR");
-		// exit(-1);
 	}
 	max = *(int *)(lst->content);
 	while (lst->next != NULL)

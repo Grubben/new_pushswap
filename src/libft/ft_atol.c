@@ -6,16 +6,16 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:13:49 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:15:46 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:03:49 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long    ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-    unsigned long   num;
-    signed char		sign;
+	unsigned long	num;
+	signed char		sign;
 	size_t			i;
 
 	sign = 1;
