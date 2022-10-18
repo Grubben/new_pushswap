@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:20:35 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 15:20:35 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:28:56 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,7 +288,7 @@ size_t	prepTop(t_list **stack, unsigned int chunks, char verbChar)
 			if ((long long int)topi <= (long long int)boti)
 				moves = moves + rotate_p(stack, topi, verbChar);
 			else
-				moves = moves + revRotate_p(stack, boti, verbChar);
+				moves = moves + revrotate_p(stack, boti, verbChar);
 			return (moves);
 		}
 		lookChunk++;

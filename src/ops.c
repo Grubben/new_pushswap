@@ -6,46 +6,35 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:25:22 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 15:25:22 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:30:55 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Swap the first 2 elements at the top of stack
-int s(t_list **stack)
+int	s(t_list **stack)
 {
-
-	t_list	*oldFirst;
-	t_list	*newFirst;
+	t_list	*oldfirst;
+	t_list	*newfirst;
 
 	if (stack && ft_lstsize(*stack) > 1)
 	{
-		oldFirst = *stack;
-		newFirst = (*stack) -> next;
-		oldFirst -> next = newFirst -> next;
-		newFirst -> next = oldFirst;
-		*stack = newFirst;
+		oldfirst = *stack;
+		newfirst = (*stack)-> next;
+		oldfirst -> next = newfirst -> next;
+		newfirst -> next = oldfirst;
+		*stack = newfirst;
 		return (1);
 	}
 	return (0);
-
 }
 
 // Take the first element at the top of stack2 and put it at the top of stack1
 int	p(t_list **stack1, t_list **stack2)
 {
-	// t_list	*newHeadS1;
-		
-	// if (stack2 && *stack2)
-	// {
-	// 	newHeadS1 = *stack2;
-	// 	(*stack2) = (*stack2) -> next;
-	// 	ft_lstadd_front(stack1, newHeadS1);
-	// 	return (1);
-	// }
-	// return (0);
-	t_list	*olds1, *olds2;
+	t_list	*olds1;
+	t_list	*olds2;
 
 	if (stack2 && ft_lstlen(*stack2) >= 1)
 	{
@@ -57,82 +46,21 @@ int	p(t_list **stack1, t_list **stack2)
 		return (1);
 	}
 	return (0);
-
-
 }
 
-// The first element becomes the last one
-int	r(t_list **stack)
+int	s_p(t_list **stack, char verbChar)
 {
-	t_list *newTail;
-	t_list	*newHead;
-
-	if (stack && *stack)
-	{
-		newTail = *stack;
-		newHead = (*stack) -> next;
-		newTail -> next = NULL;
-		ft_lstadd_back(&newHead, newTail);
-		*stack = newHead;
-		return (1);
-	}
-	return (0);
+	ft_printf("s%c\n", verbChar);
+	return (s(stack));
 }
 
-
-/*
- * Normal rotates the stack
- * the amount specified
- */
-int	rotate(t_list **stack, int howMany)
+// Take the first element at the top of stack2 and put it at the top of stack1
+int	p_p(t_list **stack1, t_list **stack2, char verbChar)
 {
-	int	q;
-
-	q = howMany;
-	while (q > 0)
-	{
-		r(stack);
-		q--;
-	}
-	return (howMany);
+	ft_printf("p%c\n", verbChar);
+	return (p(stack1, stack2));
 }
 
-
-// The last element becomes the first one
-int	rr(t_list **stack)
-{
-	t_list	*newHead;
-	t_list	*newTail;
-
-	if (stack)
-	{
-		newHead = ft_lstlast(*stack);
-		newTail = ft_lstget_item(*stack, -2);
-		newTail -> next = NULL;
-		newHead -> next = *stack;
-		*stack = newHead;
-		return (1);
-	}
-	return (0);
-}
-
-
-/*
- * Reverse rotates the stack
- * the amount specified
- */
-int	revRotate(t_list **stack, int howMany)
-{
-	int	q;
-
-	q = howMany;
-	while (q > 0)
-	{
-		rr(stack);
-		q--;
-	}
-	return (howMany);
-}
 /*
 int	main(void)
 {

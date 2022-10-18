@@ -6,36 +6,22 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:25:26 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/03 17:00:55 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:27:01 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-int s_p(t_list **stack, char verbChar)
+int	r_p(t_list **stack, char verbChar)
 {
-    ft_printf("s%c\n", verbChar);
-    return (s(stack));
+	ft_printf("r%c\n", verbChar);
+	return (r(stack));
 }
 
-// Take the first element at the top of stack2 and put it at the top of stack1
-int p_p(t_list **stack1, t_list **stack2, char verbChar)
+int	rr_p(t_list **stack, char verbChar)
 {
-    ft_printf("p%c\n", verbChar);
-    return (p(stack1, stack2));
-}
-
-int r_p(t_list **stack, char verbChar)
-{
-    ft_printf("r%c\n", verbChar);
-    return (r(stack));
-}
-
-int rr_p(t_list **stack, char verbChar)
-{
-    ft_printf("rr%c\n", verbChar);
-    return (rr(stack));
+	ft_printf("rr%c\n", verbChar);
+	return (rr(stack));
 }
 
 int	rotate_p(t_list **stack, int howMany, char verbChar)
@@ -51,7 +37,7 @@ int	rotate_p(t_list **stack, int howMany, char verbChar)
 	return (howMany);
 }
 
-int	revRotate_p(t_list **stack, int howMany, char verbChar)
+int	revrotate_p(t_list **stack, int howMany, char verbChar)
 {
 	int	q;
 
