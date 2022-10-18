@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:22:55 by amc               #+#    #+#             */
-/*   Updated: 2022/10/17 15:03:52 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/18 16:53:16 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	quit(void)
 	exit(0);
 }
 
-int	is_goodnumP(char *string)
+int	is_goodnump(char *string)
 {
 	size_t	i;
 
@@ -36,25 +36,25 @@ int	is_goodnumP(char *string)
 	return (1);
 }
 
-int	args_goodP(char *argv[])
-//TODO: check duplicates and $ARG command from enunciado is not working
+int	args_goodp(char *argv[])
 {
 	size_t	i;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (is_goodnumP(argv[i]) != 1)
+		if (is_goodnump(argv[i]) != 1)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	has_duplicatesP(t_list *stack)
+int	has_duplicatesp(t_list *stack)
 {
 	size_t	len;
-	size_t	j, i;
+	size_t	j;
+	size_t	i;
 
 	len = ft_lstlen(stack);
 	j = 0;
@@ -70,5 +70,4 @@ int	has_duplicatesP(t_list *stack)
 		j++;
 	}
 	return (0);
-
 }

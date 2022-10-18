@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:28:37 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/18 16:43:25 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:52:46 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (write(1, "Not enough arguments\n", 22) && 0);
-	if (args_goodP(argv) == 0)
+	if (args_goodp(argv) == 0)
 		quit();
 	a = args_tolist(argv);
 	if (!a)
 		return (0);
-	if (has_duplicatesP(a))
+	if (has_duplicatesp(a))
 		quit();
 	b = NULL;
 	if (argc == 3)

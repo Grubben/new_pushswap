@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:21:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/18 16:47:29 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:52:46 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ int		is_ascendingp(t_list *stack);
 int		is_descendingp(t_list *stack);
 
 /*	ARG_CHECKER	*/
-int		args_goodP(char *argv[]);
+int		args_goodp(char *argv[]);
 
 void	quit(void);
 
-int		has_duplicatesP(t_list *stack);
+int		has_duplicatesp(t_list *stack);
 
 #endif
