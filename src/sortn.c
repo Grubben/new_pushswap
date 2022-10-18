@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:16:21 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:31:59 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:47:29 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t  sort2(t_list **stack, char verbChar)
 {
-    if (is_ascendingP(*stack))
+    if (is_ascendingp(*stack))
         return (0);
     r_p(stack, verbChar);
     return (1);
@@ -22,7 +22,7 @@ size_t  sort2(t_list **stack, char verbChar)
 
 size_t  sort3(t_list **stack, char verbChar)
 {
-    if (is_ascendingP(*stack))
+    if (is_ascendingp(*stack))
         return (0);
     if (ft_lstmin(*stack) == ft_pslstget_it(*stack, 0))
         {
@@ -48,7 +48,7 @@ size_t  sort4(t_list **a, t_list **b)
     size_t moves;
 
     moves = 0;
-    if (is_ascendingP(*a))
+    if (is_ascendingp(*a))
         return (0);
     while (ft_lstmin(*a) != ft_pslstget_it(*a, 0))
         moves += rr_p(a, 'a');
@@ -62,7 +62,7 @@ size_t  sort5(t_list **a, t_list **b)
 {
     size_t  moves;
 
-    if (is_ascendingP(*a))
+    if (is_ascendingp(*a))
         return (0);
     moves = 0;
     while (ft_lstmin(*a) != ft_pslstget_it(*a, 0))

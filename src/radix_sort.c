@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:02:50 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/18 16:15:05 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:47:29 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ size_t	radix_sort(t_list **a, t_list **b)
 	moves = 0;
 	lstlen = ft_lstlen(*a);
 	shifts = 0;
-	while (!is_ascendingP(*a) && shifts < 32)
+	while (!is_ascendingp(*a) && shifts < 32)
 	{
 		i = 0;
 		while (i++ < lstlen)
