@@ -80,6 +80,8 @@ int		is_ascendingp(t_list *stack);
 
 int		is_descendingp(t_list *stack);
 
+void	nada(void *el);
+
 /*	ARG_CHECKER	*/
 int		args_goodp(char *argv[]);
 

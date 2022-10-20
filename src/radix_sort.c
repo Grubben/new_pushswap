@@ -106,22 +106,35 @@ size_t	sortbig(t_list **a, t_list **b)
 {
 	int		*indexes;
 	t_list	*tmp;
+	t_list	*new;
 	size_t	i;
 	size_t	index;
 
 	if (ft_lstmin(*a) < 0)
 	{
+		new = ft_lstcpy(*a);
+		if (!new)
+			return (0);
 		indexes = convert_toarr(*a);
 		selection_sort(indexes, ft_lstlen(*a));
 		i = 0;
 		while (i < ft_lstlen(*a))
 		{
 			index = ft_lstindex(*a, indexes[i]);
-			tmp = ft_lstget_item(*a, index);
+			tmp = ft_lstget_item(new, index);
+			tmp->content = malloc(1*sizeof(int));
+			if (!tmp->content)
+				return (0);
 			*(int *)(tmp->content) = i;
 			i++;
+		}	
+		for (int i=0; i < 11; i++)
+		{
+			ft_printf("%d__", indexes[i]);
 		}
 		free(indexes);
+		ft_lstclear(a, free);
+		return (radix_sort(&new, b));
 	}
 	return (radix_sort(a, b));
 }

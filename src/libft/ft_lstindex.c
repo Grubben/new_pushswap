@@ -21,17 +21,19 @@
 size_t	ft_lstindex(t_list *stack, int value)
 {
 	size_t	i;
+	int		tmpint;
 
 	i = 0;
-	while (stack->next != NULL)
+	while (stack != NULL)
 	{
-		if (*(int *)(stack->content) == value)
+		tmpint = *(int *)(stack->content);
+		if (tmpint == value)
 			return (i);
 		i++;
 		stack = stack->next;
 	}
-	if (*(int *)(stack->content) == value)
-		return (i);
+	// if (*(int *)(stack->content) == value)
+	// 	return (i);
 	return (-1);
 }
 
