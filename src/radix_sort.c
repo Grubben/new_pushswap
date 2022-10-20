@@ -26,7 +26,7 @@ static int	ar_minindex(int *array, size_t arlen)
 	while (i < arlen)
 	{
 		if (array[i] < array[minindex])
-			minindex = array[i];
+			minindex = i;
 		i++;
 	}
 	return (minindex);
@@ -41,7 +41,7 @@ static void	selection_sort(int *array, size_t arlen)
 	i = 0;
 	while (i < arlen)
 	{
-		tmpj = ar_minindex(array + i, arlen - i);
+		tmpj = i + ar_minindex(array + i, arlen - i);
 		if (tmpj <= 0)
 		{
 			i++;
@@ -50,6 +50,7 @@ static void	selection_sort(int *array, size_t arlen)
 		tmpint = array[i];
 		array[i] = array[tmpj];
 		array[tmpj] = tmpint;
+		i++;
 	}
 }
 

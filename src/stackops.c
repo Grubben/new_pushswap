@@ -19,12 +19,12 @@ int	is_ascendingp(t_list *stack)
 	if (!stack)
 		return (-1);
 	before = *(int *)(stack->content);
-	while (stack->next != NULL)
+	while (stack)
 	{
-		stack = stack->next;
 		if (before > *(int *)(stack->content))
 			return (0);
 		before = *(int *)(stack->content);
+		stack = stack->next;
 	}
 	return (1);
 }
