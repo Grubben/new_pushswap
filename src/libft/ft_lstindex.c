@@ -32,8 +32,6 @@ size_t	ft_lstindex(t_list *stack, int value)
 		i++;
 		stack = stack->next;
 	}
-	// if (*(int *)(stack->content) == value)
-	// 	return (i);
 	return (-1);
 }
 

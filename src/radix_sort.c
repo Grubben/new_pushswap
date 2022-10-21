@@ -63,7 +63,7 @@ static int	*convert_toarr(t_list *stack)
 	len = ft_lstlen(stack);
 	array = ft_calloc(len, sizeof(int));
 	if (!array)
-		return (0);
+		quit();
 	i = 0;
 	while (i < len)
 	{
@@ -108,29 +108,25 @@ size_t	sortbig(t_list **a, t_list **b)
 	t_list	*tmp;
 	t_list	*old;
 	size_t	i;
-	size_t	index;
 
 	if (ft_lstmin(*a) < 0)
 	{
 		old = ft_lstcpy(*a);
 		if (!old)
-			return (0);
+			quit();
 		indexes = convert_toarr(*a);
 		selection_sort(indexes, ft_lstlen(*a));
 		i = 0;
 		while (i < ft_lstlen(old))
 		{
-			index = ft_lstindex(old, indexes[i]);
-			tmp = ft_lstget_item(*a, index);
-			tmp->content = malloc(1*sizeof(int));
+			tmp = ft_lstget_item(*a, ft_lstindex(old, indexes[i]));
+			tmp -> content = malloc(1 * sizeof(int));
 			if (!tmp->content)
-				return (0);
-			*(int *)(tmp->content) = i;
-			i++;
+				quit();
+			*(int *)(tmp->content) = i++;
 		}	
 		free(indexes);
 		ft_lstclear(&old, free);
-		return (radix_sort(a, b));
 	}
 	return (radix_sort(a, b));
 }
