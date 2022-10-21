@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 	t_list	*b;
 
 	if (argc < 2)
-		return (write(1, "Not enough arguments\n", 22) && 0);
+		return (0);
 	if (args_goodp(argv) == 0)
 		quit();
 	a = args_tolist(argv);
